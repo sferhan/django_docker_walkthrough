@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  django_docker_world:
+    image: django_docker_walkthrough_server:latest
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL=sqlite://database.sqlite
+      - SERVER_NAME=Server-1
+  django_docker_world_build:
+    build: .
+    ports:
+      - 8001:8000
+    environment:
+      - DATABASE_URL=sqlite://database.sqlite
+      - SERVER_NAME=Server-1
