@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  django_docker_world:
+    ports:
+      - 8003:8000
+  django_docker_world_build:
+    ports:
+      - 8004:8000
