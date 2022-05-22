@@ -9,6 +9,8 @@ services:
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
       - SERVER_NAME=Server-1
+    volumes:
+    - ddw_logs:/log_data_volume
   django_docker_world_build:
     build: .
     ports:
@@ -22,3 +24,6 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_PASSWORD=postgres
+
+volumes:
+  ddw_logs:
